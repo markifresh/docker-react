@@ -1,0 +1,7 @@
+FROM node:6.9.1-slim
+ARG NODE_ENV="production"
+WORKDIR /app
+COPY . .
+RUN NODE_ENV="$NODE_ENV" npm --quiet install
+ENTRYPOINT ["npm", "run"]
+CMD ["test"]
